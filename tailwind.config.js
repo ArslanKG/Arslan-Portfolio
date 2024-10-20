@@ -1,9 +1,10 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: [],
+module.exports = {
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+      },
+    },
   },
-  plugins: [],
-}
-
+  // Diğer konfigürasyonlar...
+};
