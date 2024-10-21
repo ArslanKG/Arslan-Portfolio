@@ -1,5 +1,14 @@
-node_modules
+# Remix build çıktıları
+/public/build
 
-/.cache
-/build
+# Diğer geçici veya otomatik oluşturulan dosyalar
+*.log
+*.cache
+.DS_Store
+
+# Remix'in kendi oluşturduğu dosyalar
+.cache
 .env
+
+# Node modülleri
+/node_modules
