@@ -4,6 +4,7 @@ import About from "~/components/About";
 import Experience from "~/components/Experience";
 import Projects from "~/components/Projects";
 import Footer from "~/components/Footer";
+import { useLanguage } from '~/contexts/LanguageContext';
 
 export default function Index() {
   const mainRef = useRef<HTMLElement>(null);
@@ -12,6 +13,7 @@ export default function Index() {
   const projectsRef = useRef<HTMLElement>(null);
   const [isClient, setIsClient] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const { isTransitioning } = useLanguage();
 
   const scrollTo = (ref: React.RefObject<HTMLElement>) => {
     if (ref.current) {
@@ -51,7 +53,7 @@ export default function Index() {
         onProjectsClick={() => scrollTo(projectsRef)}
         activeSection={activeSection}
       />
-      <main ref={mainRef} className="relative z-10">
+      <main ref={mainRef} className={`relative z-10 fade-transition ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
         {isClient ? (
           <>
             <About ref={aboutRef} />

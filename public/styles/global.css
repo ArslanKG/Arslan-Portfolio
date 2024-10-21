@@ -319,3 +319,17 @@ main {
   color: var(--green);
   background-color: var(--light-navy);
 }
+
+/* Mevcut CSS'in sonuna ekleyin */
+
+.fade-transition {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.fade-in {
+  opacity: 1;
+}
