@@ -275,7 +275,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\data\\experience.ts"
   );
-  import.meta.hot.lastModified = "1729541237810.6006";
+  import.meta.hot.lastModified = "1729544249719.608";
 }
 var experiences = {
   tr: [
@@ -285,8 +285,28 @@ var experiences = {
       company: "Turkcell",
       description: "Turkcell'in dijital d\xF6n\xFC\u015F\xFCm projelerinde liderlik rol\xFC \xFCstlenerek, yenilik\xE7i \xE7\xF6z\xFCmler geli\u015Ftiriyorum. Ekip y\xF6netimi ve mentorluk yaparak, \u015Firketin teknolojik vizyonuna katk\u0131da bulunuyorum.",
       technologies: ["Java", "Spring Boot", "Microservices", "Kubernetes", "AWS"]
+    },
+    {
+      date: "2020 \u2014 2022",
+      title: "Yaz\u0131l\u0131m Geli\u015Ftirme Uzman\u0131",
+      company: "Garanti BBVA Teknoloji",
+      description: "Banka'n\u0131n \xE7e\u015Fitli dijital \xFCr\xFCnlerinin geli\u015Ftirilmesinde g\xF6rev ald\u0131m. M\xFC\u015Fteri deneyimini iyile\u015Ftiren ve i\u015Flem g\xFCvenli\u011Fini art\u0131ran projeler \xFCzerinde \xE7al\u0131\u015Ft\u0131m.",
+      technologies: ["Java", "Spring Framework", "Oracle", "Angular", "Docker"]
+    },
+    {
+      date: "2018 \u2014 2020",
+      title: "Full Stack Geli\u015Ftirici",
+      company: "Trendyol",
+      description: "E-ticaret platformunun hem \xF6n y\xFCz hem de arka y\xFCz geli\u015Ftirmelerinde aktif rol ald\u0131m. Performans optimizasyonu ve \xF6l\xE7eklenebilirlik \xFCzerine \xE7al\u0131\u015Fmalar yapt\u0131m.",
+      technologies: ["React", "Node.js", "MongoDB", "Redis", "Elasticsearch"]
+    },
+    {
+      date: "2016 \u2014 2018",
+      title: "Yaz\u0131l\u0131m M\xFChendisi",
+      company: "Vodafone",
+      description: "Telekom sekt\xF6r\xFCnde m\xFC\u015Fteri hizmetleri ve faturalama sistemleri \xFCzerinde \xE7al\u0131\u015Ft\u0131m. B\xFCy\xFCk veri i\u015Fleme ve analizi konular\u0131nda deneyim kazand\u0131m.",
+      technologies: ["Python", "Django", "PostgreSQL", "Apache Kafka", "Hadoop"]
     }
-    // ... diğer Türkçe deneyimler
   ],
   en: [
     {
@@ -295,8 +315,28 @@ var experiences = {
       company: "Turkcell",
       description: "Leading digital transformation projects at Turkcell, developing innovative solutions. Contributing to the company's technological vision through team management and mentoring.",
       technologies: ["Java", "Spring Boot", "Microservices", "Kubernetes", "AWS"]
+    },
+    {
+      date: "2020 \u2014 2022",
+      title: "Software Development Specialist",
+      company: "Garanti BBVA Technology",
+      description: "Worked on the development of various digital products for the bank. Focused on projects that improved customer experience and enhanced transaction security.",
+      technologies: ["Java", "Spring Framework", "Oracle", "Angular", "Docker"]
+    },
+    {
+      date: "2018 \u2014 2020",
+      title: "Full Stack Developer",
+      company: "Trendyol",
+      description: "Played an active role in both frontend and backend development of the e-commerce platform. Worked on performance optimization and scalability improvements.",
+      technologies: ["React", "Node.js", "MongoDB", "Redis", "Elasticsearch"]
+    },
+    {
+      date: "2016 \u2014 2018",
+      title: "Software Engineer",
+      company: "Vodafone",
+      description: "Worked on customer service and billing systems in the telecom sector. Gained experience in big data processing and analysis.",
+      technologies: ["Python", "Django", "PostgreSQL", "Apache Kafka", "Hadoop"]
     }
-    // ... diğer İngilizce deneyimler
   ]
 };
 
@@ -735,4 +775,4 @@ window.$RefreshSig$ = prevRefreshSig;
 export {
   Index as default
 };
-//# sourceMappingURL=/build/routes/_index-KWUEB5X6.js.map
+//# sourceMappingURL=/build/routes/_index-PU3YA3MW.js.map
