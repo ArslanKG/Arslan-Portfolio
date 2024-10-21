@@ -34,7 +34,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\components\\Header.tsx"
   );
-  import.meta.hot.lastModified = "1729438652580.8013";
+  import.meta.hot.lastModified = "1729441051962.3733";
 }
 var Header = ({
   onAboutClick,
@@ -629,4 +629,4 @@ window.$RefreshSig$ = prevRefreshSig;
 export {
   Index as default
 };
-//# sourceMappingURL=/build/routes/_index-QSFQIC5I.js.map
+//# sourceMappingURL=/build/routes/_index-B4OLMUFD.js.map

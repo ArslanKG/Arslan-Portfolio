@@ -67,7 +67,7 @@ function App() {
     const updateGradient = (e) => {
       if (gradientRef.current) {
         const x = e.clientX;
-        const y = e.clientY + window.scrollY;
+        const y = e.clientY;
         gradientRef.current.style.background = `radial-gradient(800px at ${x}px ${y}px, rgba(29, 78, 216, 0.15), transparent 80%)`;
       }
     };
@@ -141,4 +141,4 @@ export {
   links,
   meta
 };
-//# sourceMappingURL=/build/root-7MKIMGNA.js.map
+//# sourceMappingURL=/build/root-CO6XJUS2.js.map
