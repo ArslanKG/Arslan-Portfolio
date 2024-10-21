@@ -12,3 +12,6 @@
 
 # Node modülleri
 /node_modules
+
+# Remix build çıktıları
+/build
