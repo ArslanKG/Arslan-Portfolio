@@ -1,4 +1,6 @@
 import { FC } from "react";
+import { useLanguage } from '~/contexts/LanguageContext';
+import { translations } from '~/data/translations';
 
 interface HeaderProps {
   onAboutClick: () => void;
@@ -8,39 +10,45 @@ interface HeaderProps {
 }
 
 const Header: FC<HeaderProps> = ({ onAboutClick, onExperienceClick, onProjectsClick, activeSection }) => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
-    <header className="fixed-header">
-      <div className="logo">
-        <h1>Arslan Kemal GÜNDÜZ</h1>
-        <h2 className="subtitle">Senior Software Developer Specialist</h2>
-        <p className="intro-text">
-        I build scalable, efficient, user-centric applications with clean architecture.
+    <header id="main-header" className="fixed-header">
+      <div id="logo-container" className="logo">
+        <h1 id="dev-name">Arslan Kemal GÜNDÜZ</h1>
+        <h2 id="dev-title" className="subtitle">{t.devTitle}</h2>
+        <p id="dev-intro" className="intro-text mt-6 max-w-md text-base text-slate-400 line-clamp-2">
+          {t.devIntro}
         </p>
       </div>
-      <nav>
+      <nav id="main-nav">
         <ol>
           <li>
             <button 
+              id="nav-about" 
               onClick={onAboutClick} 
               className={activeSection === "about" ? "active" : ""}
             >
-              About
+              {t.about}
             </button>
           </li>
           <li>
             <button 
+              id="nav-experience" 
               onClick={onExperienceClick} 
               className={activeSection === "experience" ? "active" : ""}
             >
-              Experience
+              {t.experience}
             </button>
           </li>
           <li>
             <button 
+              id="nav-projects" 
               onClick={onProjectsClick} 
               className={activeSection === "projects" ? "active" : ""}
             >
-              Projects
+              {t.projects}
             </button>
           </li>
         </ol>

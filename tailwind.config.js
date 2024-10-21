@@ -7,4 +7,8 @@ module.exports = {
     },
   },
   // Diğer konfigürasyonlar...
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+    // ... diğer eklentiler ...
+  ],
 };

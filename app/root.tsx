@@ -8,6 +8,8 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import { useEffect, useRef, useState } from "react";
+import { LanguageProvider } from '~/contexts/LanguageContext';
+import LanguageToggle from '~/components/LanguageToggle';
 
 
 export const links: LinksFunction = () => [
@@ -49,14 +51,17 @@ export default function App() {
         <Links />
       </head>
       <body className="bg-navy leading-relaxed text-slate antialiased">
-        {isClient && (
-          <div 
-            id="gradient-background"
-            ref={gradientRef}
-            className="pointer-events-none fixed inset-0 z-[-1] transition duration-300"
-          />
-        )}
-        <Outlet />
+        <LanguageProvider>
+          <LanguageToggle />
+          {isClient && (
+            <div 
+              id="gradient-background"
+              ref={gradientRef}
+              className="pointer-events-none fixed inset-0 z-[-1] transition duration-300"
+            />
+          )}
+          <Outlet />
+        </LanguageProvider>
         <ScrollRestoration />
         <Scripts />
         {process.env.NODE_ENV === "development" && <LiveReload />}

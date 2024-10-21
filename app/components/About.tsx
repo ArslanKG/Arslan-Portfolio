@@ -1,22 +1,21 @@
 import { forwardRef } from "react";
+import { useLanguage } from '~/contexts/LanguageContext';
+import { translations } from '~/data/translations';
 
 const About = forwardRef<HTMLElement, {}>((props, ref) => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
-    <section id="about" ref={ref}>
-      <h2 className="section-heading">About Me </h2>
-      <div className="about-content">
-        <div className="about-text">
-          <p>
-          With over 3 years of experience primarily in .Net development, I have also worked extensively with modern frontend technologies such as React.js and Vue.js.
-          </p>
-          <p>
-          My diverse technical skill set allows me to build efficient, scalable, and responsive web applications, seamlessly bridging backend and frontend functionalities.
-          </p>
-          <p>
-          I am passionate about learning new tools and frameworks, continuously enhancing my expertise to deliver optimal solutions in full-stack development.
-          </p>
+    <section id="about-section" ref={ref}>
+      <h2 id="about-heading" className="section-heading">{t.aboutMe}</h2>
+      <div id="about-content" className="about-content">
+        <div id="about-text" className="about-text">
+          <p id="about-para-1">{t.aboutPara1}</p>
+          <p id="about-para-2">{t.aboutPara2}</p>
+          <p id="about-para-3">{t.aboutPara3}</p>
         </div>
-        <div className="about-image">
+        <div id="about-image" className="about-image">
           {/* Profil resmi buraya */}
         </div>
       </div>
