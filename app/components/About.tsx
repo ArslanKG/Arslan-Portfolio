@@ -1,10 +1,10 @@
 import { forwardRef } from "react";
 import { useLanguage } from '~/contexts/LanguageContext';
-import { translations } from '~/data/translations';
+import { aboutData } from '~/data/aboutData';
 
 const About = forwardRef<HTMLElement, {}>((props, ref) => {
   const { language } = useLanguage();
-  const t = translations[language];
+  const t = aboutData[language];
 
   return (
     <section id="about-section" ref={ref}>

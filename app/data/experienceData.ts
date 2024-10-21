@@ -1,4 +1,4 @@
-export const experiences = {
+export const experienceData = {
   tr: [
     {
       date: "2022 — Şimdi",

@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { useLanguage } from '~/contexts/LanguageContext';
-import { translations } from '~/data/translations';
+import { headerData } from '~/data/headerData';
 
 interface HeaderProps {
   onAboutClick: () => void;
@@ -11,7 +11,7 @@ interface HeaderProps {
 
 const Header: FC<HeaderProps> = ({ onAboutClick, onExperienceClick, onProjectsClick, activeSection }) => {
   const { language } = useLanguage();
-  const t = translations[language];
+  const t = headerData[language];
 
   return (
     <header id="main-header" className="fixed-header">

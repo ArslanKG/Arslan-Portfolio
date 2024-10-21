@@ -8,7 +8,7 @@ export type Project = {
   external?: string;
 };
 
-export const projects = {
+export const projectsData = {
   tr: [
     {
       title: "Proje 1",

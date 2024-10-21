@@ -1,17 +1,17 @@
 import { forwardRef } from "react";
 import { useLanguage } from '~/contexts/LanguageContext';
-import { translations } from '~/data/translations';
-import { experiences } from "~/data/experience";
+import { experienceData } from "~/data/experienceData";
 
 const Experience = forwardRef<HTMLElement>((props, ref) => {
   const { language } = useLanguage();
-  const t = translations[language];
 
   return (
     <section id="experience-section" ref={ref}>
-      <h2 id="experience-heading" className="section-heading">{t.experienceTitle}</h2>
+      <h2 id="experience-heading" className="section-heading">
+        {language === 'tr' ? 'Deneyim' : 'Experience'}
+      </h2>
       <div id="experience-content" className="experience-content">
-        {experiences[language].map((exp, index) => (
+        {experienceData[language].map((exp, index) => (
           <div id={`experience-item-${index}`} key={index} className="experience-item group">
             <div id={`experience-header-${index}`} className="experience-header">
               <h3 id={`experience-title-${index}`} className="experience-title">

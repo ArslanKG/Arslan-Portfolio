@@ -1,20 +1,22 @@
 import { forwardRef } from "react";
 import { useLanguage } from '~/contexts/LanguageContext';
-import { translations } from '~/data/translations';
-import { projects } from "~/data/projects";
+import { projectsData } from "~/data/projectsData";
 
 const Projects = forwardRef<HTMLElement>((props, ref) => {
   const { language } = useLanguage();
-  const t = translations[language];
 
   return (
     <section id="projects-section" ref={ref}>
-      <h2 id="projects-heading" className="section-heading">{t.projectsTitle}</h2>
+      <h2 id="projects-heading" className="section-heading">
+        {language === 'tr' ? 'Projeler' : 'Projects'}
+      </h2>
       <div id="projects-grid" className="projects-grid">
-        {projects[language].map((project, index) => (
+        {projectsData[language].map((project, index) => (
           <div id={`project-item-${index}`} key={index} className="project-item">
             <div id={`project-content-${index}`} className="project-content">
-              <div id={`project-label-${index}`} className="project-label">{t.featuredProject}</div>
+              <div id={`project-label-${index}`} className="project-label">
+                {language === 'tr' ? 'Öne Çıkan Proje' : 'Featured Project'}
+              </div>
               <h3 id={`project-title-${index}`} className="project-title">{project.title}</h3>
               <div id={`project-description-${index}`} className="project-description">
                 <p>{project.description}</p>
