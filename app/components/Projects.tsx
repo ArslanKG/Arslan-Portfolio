@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import { useLanguage } from '~/contexts/LanguageContext';
-import { projectsData } from "~/data/projectsData";
+import { projectsData, generalInfo } from "~/data/projectsData";
 
 const Projects = forwardRef<HTMLElement>((props, ref) => {
   const { language } = useLanguage();
@@ -8,41 +8,40 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
   return (
     <section id="projects-section" ref={ref}>
       <h2 id="projects-heading" className="section-heading">
-        {language === 'tr' ? 'Projeler' : 'Projects'}
+        {generalInfo[language][0].projects}
       </h2>
-      <div id="projects-grid" className="projects-grid">
+      <div id="projects-content" className="projects-content">
         {projectsData[language].map((project, index) => (
-          <div id={`project-item-${index}`} key={index} className="project-item">
-            <div id={`project-content-${index}`} className="project-content">
-              <div id={`project-label-${index}`} className="project-label">
-                {language === 'tr' ? 'Öne Çıkan Proje' : 'Featured Project'}
-              </div>
-              <h3 id={`project-title-${index}`} className="project-title">{project.title}</h3>
-              <div id={`project-description-${index}`} className="project-description">
-                <p>{project.description}</p>
-              </div>
-              <ul id={`project-tech-list-${index}`} className="project-tech-list">
-                {project.technologies.map((tech, techIndex) => (
-                  <li id={`project-tech-${index}-${techIndex}`} key={techIndex}>{tech}</li>
-                ))}
-              </ul>
-              <div id={`project-links-${index}`} className="project-links">
-                {project.github && (
-                  <a id={`project-github-${index}`} href={project.github} aria-label="GitHub Link" target="_blank" rel="noopener noreferrer">
-                    {/* GitHub icon */}
-                  </a>
-                )}
-                {project.external && (
-                  <a id={`project-external-${index}`} href={project.external} aria-label="External Link" className="external" target="_blank" rel="noopener noreferrer">
-                    {/* External link icon */}
-                  </a>
-                )}
-              </div>
+          <div id={`project-item-${index}`} key={index} className="project-item group">
+            <div className="project-header">
+              <h3 id={`project-title-${index}`} className="project-title">
+                {project.title}
+                <span className="project-links">
+                  {project.github && (
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                  )}
+                  {project.external && (
+                    <a href={project.external} target="_blank" rel="noopener noreferrer" aria-label="External Link">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </a>
+                  )}
+                </span>
+              </h3>
             </div>
-            <div id={`project-image-${index}`} className="project-image">
-              <a href={project.link} target="_blank" rel="noopener noreferrer">
+            <div className="project-content">
+              <div className="project-image">
                 <img src={project.image} alt={project.title} />
-              </a>
+              </div>
+              <div className="project-info">
+                <p id={`project-description-${index}`} className="project-description">{project.description}</p>
+                <ul id={`project-tech-list-${index}`} className="project-tech-list">
+                  {project.technologies.map((tech, techIndex) => (
+                    <li id={`project-tech-${index}-${techIndex}`} key={techIndex}>{tech}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         ))}

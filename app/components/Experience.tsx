@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import { useLanguage } from '~/contexts/LanguageContext';
-import { experienceData } from "~/data/experienceData";
+import { experienceData, generalInfo } from "~/data/experienceData";
 
 const Experience = forwardRef<HTMLElement>((props, ref) => {
   const { language } = useLanguage();
@@ -8,7 +8,7 @@ const Experience = forwardRef<HTMLElement>((props, ref) => {
   return (
     <section id="experience-section" ref={ref}>
       <h2 id="experience-heading" className="section-heading">
-        {language === 'tr' ? 'Deneyim' : 'Experience'}
+        {generalInfo[language][0].experience}
       </h2>
       <div id="experience-content" className="experience-content">
         {experienceData[language].map((exp, index) => (

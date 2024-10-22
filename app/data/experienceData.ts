@@ -60,3 +60,16 @@ export const experienceData = {
     }
   ]
 };
+
+export const generalInfo = {
+  tr: [
+    {
+      experience: "Deneyim",
+    }
+  ],
+  en: [
+    {
+      experience: "Experience",
+    }
+  ]
+};
