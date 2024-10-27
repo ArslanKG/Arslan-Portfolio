@@ -46,7 +46,7 @@ export default function Index() {
   }, []);
 
   return (
-    <div className="container mx-auto px-4 max-w-full min-h-screen">
+    <div className="container mx-auto px-4 max-w-full min-h-screen pt-24">
       <Header 
         onAboutClick={() => scrollTo(aboutRef)}
         onExperienceClick={() => scrollTo(experienceRef)}

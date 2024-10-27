@@ -16,19 +16,19 @@ const Header: FC<HeaderProps> = ({ onAboutClick, onExperienceClick, onProjectsCl
   return (
     <header id="main-header" className={`fixed-header fade-transition ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
       <div id="logo-container" className="logo">
-        <h1 id="dev-name">Arslan Kemal GÜNDÜZ</h1>
+        <h1 id="dev-name" className="text-balance">Arslan Kemal GÜNDÜZ</h1>
         <h2 id="dev-title" className="subtitle">{t.devTitle}</h2>
-        <p id="dev-intro" className="intro-text mt-6 max-w-md text-base text-slate-400 line-clamp-2">
+        <p id="dev-intro" className="intro-text mt-6 text-base text-slate-400">
           {t.devIntro}
         </p>
       </div>
-      <nav id="main-nav">
+      <nav id="main-nav" className="nav-container">
         <ol>
           <li>
             <button 
               id="nav-about" 
               onClick={onAboutClick} 
-              className={activeSection === "about" ? "active" : ""}
+              className={`nav-button ${activeSection === "about" ? "active" : ""}`}
               disabled={isTransitioning}
             >
               {t.about}
@@ -38,7 +38,7 @@ const Header: FC<HeaderProps> = ({ onAboutClick, onExperienceClick, onProjectsCl
             <button 
               id="nav-experience" 
               onClick={onExperienceClick} 
-              className={activeSection === "experience" ? "active" : ""}
+              className={`nav-button ${activeSection === "experience" ? "active" : ""}`}
               disabled={isTransitioning}
             >
               {t.experience}
@@ -48,7 +48,7 @@ const Header: FC<HeaderProps> = ({ onAboutClick, onExperienceClick, onProjectsCl
             <button 
               id="nav-projects" 
               onClick={onProjectsClick} 
-              className={activeSection === "projects" ? "active" : ""}
+              className={`nav-button ${activeSection === "projects" ? "active" : ""}`}
               disabled={isTransitioning}
             >
               {t.projects}

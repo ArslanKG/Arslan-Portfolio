@@ -27,27 +27,25 @@ body {
 }
 
 .container {
-  display: flex;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 30px;
+  padding: 2rem;
   position: relative;
-  z-index: 1;
 }
 
 .fixed-header {
   position: fixed;
-  width: 300px;
-  height: 34vh;
+  height: 100vh;
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .logo {
   margin-bottom: 2rem;
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
 }
 
 .subtitle {
@@ -55,11 +53,11 @@ body {
 }
 
 .logo h1 {
-  font-size: 2.2rem; /* Bu değeri ihtiyacnıza göre ayarlayabilirsiniz */
+  font-size: 2.2rem;
   font-weight: 600;
   color: var(--lightest-slate);
   margin: 0;
-  line-height: 1.2; /* Satır yüksekliğini ayarlayarak dikey hizalamayı iyileştirebiliriz */
+  line-height: 1.2;
 }
 
 .intro {
@@ -132,12 +130,138 @@ main {
   max-width: 800px;
 }
 
+/* Responsive tasarım için medya sorguları */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 100%;
+  }
+
+  .fixed-header {
+    width: 250px;
+  }
+
+  main {
+    margin-left: 400px;
+  }
+
+  .logo h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .fixed-header {
+    width: 220px;
+  }
+
+  main {
+    margin-left: 300px;
+    padding: 1.5rem;
+  }
+
+  .logo h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .fixed-header {
+    position: relative;
+    height: auto;
+    padding: 1.5rem;
+  }
+
+  .logo {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  main {
+    margin-left: 0;
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+
+  .logo h1 {
+    font-size: 1.6rem;
+  }
+
+  nav ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  nav ol li {
+    margin-bottom: 0;
+  }
+
+  .intro-text {
+    max-width: 100%;
+  }
+
+  /* Index.tsx'deki flex yapısını mobilde düzelt */
+  .container > div {
+    flex-direction: column;
+  }
+
+  .container > div > div {
+    position: relative;
+    width: 100%;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  .fixed-header {
+    position: relative;
+    height: auto;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  main {
+    padding-left: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .fixed-header {
+    padding: 1rem;
+  }
+
+  .logo h1 {
+    font-size: 1.4rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  .section-heading {
+    font-size: 1.6rem;
+  }
+
+  .section-heading::after {
+    width: 150px;
+  }
+
+  nav button, nav a {
+    font-size: 0.9rem;
+  }
+}
+
 .section-heading {
   display: flex;
   align-items: center;
   margin-bottom: 1.5rem;
   font-size: 2rem;
-  color: var(--lightest-slate);
+  margin-top: 0 !important;
 }
 
 .section-heading::after {
@@ -153,6 +277,11 @@ main {
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  margin-bottom: 5rem;
+}
+
+.about-content {
+  margin-bottom: 5rem;
 }
 
 .experience-item {
@@ -162,13 +291,12 @@ main {
   background-color: transparent;
 }
 
-/* Tüm deneyim öğelerini hafifçe soluklaştır ve bulanıklaştır */
+
 .experience-content:hover .experience-item {
-  opacity: 0.7; /* Opaklığı biraz artırdık */
-  filter: blur(1px); /* Blur miktarını azalttık */
+  opacity: 0.7; 
+  filter: blur(1px);
 }
 
-/* Hover yapılan öğeyi normal hale getir */
 .experience-content .experience-item:hover {
   opacity: 1;
   filter: none;
@@ -461,3 +589,4 @@ main {
 .about-text {
   padding-left: 24px;
 }
+
