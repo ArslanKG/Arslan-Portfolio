@@ -27,7 +27,7 @@ export const projectsData = {
       description: "Spotify Web API kullanarak bir web uygulaması oluşturmayı öğreten video kursu. REST API'leri, kullanıcı kimlik doğrulama akışları, Node, Express, React ve Styled Components gibi konuları içerir.",
       technologies: ["React", "Node.js", "Express", "Spotify API"],
       github: "https://github.com/user/spotify-app",
-      external: "https://spotify-connected-app.com",
+      external: "/projects/spotify-baglantili-uygulama",
       image: "/images/developer.png"
     },
     {
