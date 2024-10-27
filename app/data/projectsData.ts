@@ -23,20 +23,12 @@ export const generalInfo = {
 export const projectsData = {
   tr: [
     {
-      title: "Spotify Bağlantılı Uygulama",
-      description: "Spotify Web API kullanarak bir web uygulaması oluşturmayı öğreten video kursu. REST API'leri, kullanıcı kimlik doğrulama akışları, Node, Express, React ve Styled Components gibi konuları içerir.",
-      technologies: ["React", "Node.js", "Express", "Spotify API"],
-      github: "https://github.com/user/spotify-app",
-      external: "/projects/spotify-baglantili-uygulama",
-      image: "/images/developer.png"
-    },
-    {
-      title: "Spotify Profili",
-      description: "Kişiselleştirilmiş Spotify verilerini görselleştiren web uygulaması. En çok dinlenen sanatçıları, parçaları, son çalınan parçaları ve her parça hakkında detaylı ses bilgilerini görüntüleyin. Mevcut çalma listelerinize dayalı önerilen parçalardan yeni çalma listeleri oluşturun ve kaydedin.",
-      technologies: ["React", "Express", "Spotify API", "Heroku"],
-      github: "https://github.com/user/spotify-profile",
-      external: "https://myspotify-profile.com",
-      image: "/images/developer.png"
+      title: "404 Süper Kahraman Sayfası",
+      description: "Kullanıcı dostu bir 404 hata sayfası. Animasyonlu yıldızlar ve Superman temalı tasarımıyla, kayıp sayfaları eğlenceli bir deneyime dönüştürür. Uzay arka planında süzülen Superman karakteri, kullanıcıları ana sayfaya yönlendiren interaktif bir düğme ile birlikte sunulur.",
+      technologies: ["JS", "CSS", "HTML"],
+      github: "https://codepen.io/ArslanKG/pen/vYodGOd",
+      external: "/NotFound",
+      image: "/images/Superman_mainpage.png"
     },
     {
       title: "Halcyon Teması",
@@ -57,11 +49,11 @@ export const projectsData = {
   ],
   en: [
     {
-      title: "Spotify Connected App",
-      description: "Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.",
-      technologies: ["React", "Node.js", "Express", "Spotify API"],
+      title: "No Found Page",
+      description: "A user-friendly 404 error page. With animated stars and a Superman-themed design, it transforms lost pages into an entertaining experience. The Superman character, with an interactive button to redirect users to the main page, is displayed on a space background.",  
+      technologies: ["JS", "CSS", "HTML"],
       github: "https://github.com/user/spotify-app",
-      external: "https://spotify-connected-app.com",
+      external: "/NotFound",
       image: "/images/developer.png"
     },
     {
