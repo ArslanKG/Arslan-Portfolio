@@ -102,7 +102,6 @@ export default function NotFound() {
           transform: translateY(-25%);
           padding-bottom: 4rem;
         }
-
         .content h1 {
           color: white;
           font-size: 130px;
