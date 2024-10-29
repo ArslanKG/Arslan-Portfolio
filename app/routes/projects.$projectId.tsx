@@ -1,17 +1,17 @@
 import { useParams } from "@remix-run/react";
-import AnimatedCloackProject, { links as animatedCloackLinks } from "~/projects/animatedCloack/AnimatedCloack";
+import AnimatedClockProject, { links as animatedClockLinks } from "../projects/animatedClock/animatedClock";
 import NotFound from "../components/NotFound";
 
 export const links = () => {
-  return animatedCloackLinks();
+  return animatedClockLinks();
 };
 
 export default function ProjectRoute() {
   const { projectId } = useParams();
 
   switch (projectId) {
-    case 'animatedCloack':
-      return <AnimatedCloackProject />;
+    case 'animatedClock':
+      return <AnimatedClockProject />;
     default:
       return <NotFound />;
   }

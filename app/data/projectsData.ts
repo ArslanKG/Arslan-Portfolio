@@ -31,12 +31,12 @@ export const projectsData = {
       image: "/images/Superman_mainpage.png"
     },
     {
-      title: "Halcyon Teması",
-      description: "VS Code, Sublime Text, Atom, iTerm ve daha fazlası için minimal koyu mavi tema.",
-      technologies: ["VS Code", "Sublime Text", "Atom", "iTerm"],
-      github: "https://github.com/user/halcyon-theme",
-      external: "https://halcyon-theme.netlify.app",
-      image: "/images/developer.png"
+      title: "Animasyonlu Saat",
+      description: "Animasyonlu bir saat uygulaması. Saat, dakika ve saniye göstergelerini kullanarak saat, dakika ve saniye göstergelerini görüntüler.",
+      technologies: ["JS", "CSS", "HTML"],
+      github: "https://codepen.io/ArslanKG/pen/xxvWPMQ",
+      external: "/projects/animatedClock",
+      image: "/images/Animated_Clock.png"
     },
     {
       title: "brittanychiang.com (v4)",
@@ -52,17 +52,17 @@ export const projectsData = {
       title: "No Found Page",
       description: "A user-friendly 404 error page. With animated stars and a Superman-themed design, it transforms lost pages into an entertaining experience. The Superman character, with an interactive button to redirect users to the main page, is displayed on a space background.",  
       technologies: ["JS", "CSS", "HTML"],
-      github: "https://github.com/user/spotify-app",
+      github: "https://codepen.io/ArslanKG/pen/vYodGOd",
       external: "/NotFound",
-      image: "/images/developer.png"
+      image: "/images/Superman_mainpage.png"
     },
     {
-      title: "Spotify Profile",
-      description: "Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
-      technologies: ["React", "Express", "Spotify API", "Heroku"],
-      github: "https://github.com/user/spotify-profile",
-      external: "https://myspotify-profile.com",
-      image: "/images/developer.png"
+      title: "Animated Clock",
+      description: "Animated clock application. The clock displays hours, minutes, and seconds using hour, minute, and second indicators.",
+      technologies: ["JS", "CSS", "HTML"],
+      github: "https://codepen.io/ArslanKG/pen/xxvWPMQ",
+      external: "/projects/animatedClock",
+      image: "/images/Animated_Clock.png"
     },
     {
       title: "Halcyon Theme",
