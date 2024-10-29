@@ -39,12 +39,12 @@ export const projectsData = {
       image: "/images/Animated_Clock.png"
     },
     {
-      title: "brittanychiang.com (v4)",
-      description: "Gatsby ile oluşturulmuş, 6k+ yıldız ve 3k+ fork almış eski bir portfolyo sitesi.",
-      technologies: ["Gatsby", "Styled Components", "Netlify"],
-      github: "https://github.com/user/brittanychiang.com",
-      external: "https://brittanychiang.com",
-      image: "/images/developer.png"
+      title: "Her şey bir yansıma",
+      description: "Bir yansıma efekti uygulaması. Mouse hareketlerine tepki veren ve 3D görünüm sağlayan dinamik bir arayüz deneyimi sunar.",
+      technologies: ["React", "CSS", "TypeScript", "WebGL2", "GLSL", "Remix"],
+      github: "https://codepen.io/atzedent/pen/PovvpvR",
+      external: "/projects/reflectionProject",
+      image: "/images/Reflection_Effect.png"
     }
   ],
   en: [
@@ -65,20 +65,12 @@ export const projectsData = {
       image: "/images/Animated_Clock.png"
     },
     {
-      title: "Halcyon Theme",
-      description: "Minimal dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more.",
-      technologies: ["VS Code", "Sublime Text", "Atom", "iTerm"],
-      github: "https://github.com/user/halcyon-theme",
-      external: "https://halcyon-theme.netlify.app",
-      image: "/images/developer.png"
-    },
-    {
-      title: "brittanychiang.com (v4)",
-      description: "An old portfolio site built with Gatsby with 6k+ stars and 3k+ forks",
-      technologies: ["Gatsby", "Styled Components", "Netlify"],
-      github: "https://github.com/user/brittanychiang.com",
-      external: "https://brittanychiang.com",
-      image: "/images/developer.png"
+      title: "Everything is a Reflection",
+      description: "An interactive reflection effect application. Provides a dynamic interface experience that responds to mouse movements and provides 3D viewing.",
+      technologies: ["React", "CSS", "TypeScript", "WebGL2", "GLSL", "Remix"],
+      github: "https://codepen.io/atzedent/pen/PovvpvR",
+      external: "/projects/reflectionProject",
+      image: "/images/Reflection_Effect.png"
     }
   ]
 };
