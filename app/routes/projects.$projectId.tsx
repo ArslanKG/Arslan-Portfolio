@@ -11,7 +11,6 @@ export const links = () => {
 export default function ProjectRoute() {
   const { projectId } = useParams();
 
-  // Client-side only rendering için
   useEffect(() => {
     if (typeof document !== "undefined") {
       document.documentElement.style.height = "100%";

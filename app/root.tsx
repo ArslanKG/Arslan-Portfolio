@@ -32,7 +32,7 @@ export default function App() {
     const updateGradient = (e: MouseEvent) => {
       if (gradientRef.current) {
         const x = e.clientX;
-        const y = e.clientY; // window.scrollY'yi kaldırdık
+        const y = e.clientY;
         gradientRef.current.style.background = `radial-gradient(800px at ${x}px ${y}px, rgba(29, 78, 216, 0.15), transparent 80%)`;
       }
     };

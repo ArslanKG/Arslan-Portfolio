@@ -41,7 +41,7 @@ export const projectsData = {
     {
       title: "Her şey bir yansıma",
       description: "Bir yansıma efekti uygulaması. Mouse hareketlerine tepki veren ve 3D görünüm sağlayan dinamik bir arayüz deneyimi sunar.",
-      technologies: ["React", "CSS", "TypeScript", "WebGL2", "GLSL", "Remix"],
+      technologies: ["CSS", "TypeScript", "WebGL2", "GLSL", "Remix"],
       github: "https://codepen.io/atzedent/pen/PovvpvR",
       external: "/projects/reflectionProject",
       image: "/images/Reflection_Effect.png"
@@ -67,7 +67,7 @@ export const projectsData = {
     {
       title: "Everything is a Reflection",
       description: "An interactive reflection effect application. Provides a dynamic interface experience that responds to mouse movements and provides 3D viewing.",
-      technologies: ["React", "CSS", "TypeScript", "WebGL2", "GLSL", "Remix"],
+      technologies: ["CSS", "TypeScript", "WebGL2", "GLSL", "Remix"],
       github: "https://codepen.io/atzedent/pen/PovvpvR",
       external: "/projects/reflectionProject",
       image: "/images/Reflection_Effect.png"
