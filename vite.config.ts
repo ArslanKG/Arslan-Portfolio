@@ -9,6 +9,10 @@ export default defineConfig({
   plugins: [
     remix({
       ssr: false,
+      basename: "/",
+      buildEnd: async () => {
+        console.log("SPA build completed");
+      },
       future: {
         v3_fetcherPersist: true,
         v3_relativeSplatPath: true,
