@@ -21,9 +21,20 @@ export default function ReflectionProject() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const gl = canvas.getContext('webgl2', { preserveDrawingBuffer: true });
+    const gl = canvas.getContext('webgl2', { preserveDrawingBuffer: true }) ||
+              canvas.getContext('webgl', { preserveDrawingBuffer: true });
     if (!gl) {
-      console.error('WebGL2 desteklenmiyor');
+      console.error('WebGL desteklenmiyor');
+      // Fallback için basit canvas rendering veya mesaj göster
+      const ctx = canvas.getContext('2d');
+      if (ctx) {
+        ctx.fillStyle = '#1e293b';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#94a3b8';
+        ctx.font = '24px Inter';
+        ctx.textAlign = 'center';
+        ctx.fillText('Bu tarayıcı WebGL desteklemiyor', canvas.width/2, canvas.height/2);
+      }
       return;
     }
 

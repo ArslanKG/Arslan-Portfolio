@@ -1,11 +1,10 @@
 import { useParams } from "react-router-dom";
-import AnimatedClockProject, { links as animatedClockLinks } from "../projects/animatedClock/animatedClock";
 import NotFound from "../components/NotFound";
 import ReflectionProject, { links as reflectionLinks } from "../projects/ReflectionProject/ReflectionProject";
 import { useEffect } from "react";
 
 export const links = () => {
-  return [...animatedClockLinks(), ...reflectionLinks()];
+  return [...reflectionLinks()];
 };
 
 export default function ProjectRoute() {
@@ -25,8 +24,6 @@ export default function ProjectRoute() {
   }, []);
 
   switch (projectId) {
-    case 'animatedClock':
-      return <AnimatedClockProject />;
     case 'reflectionProject':
       return <ReflectionProject />;
     default:

@@ -13,4 +13,22 @@ export default defineConfig({
     }),
     tsconfigPaths(),
   ],
+  build: {
+    minify: 'esbuild',
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          remix: ['@remix-run/react', '@remix-run/node'],
+        },
+      },
+    },
+  },
+  css: {
+    devSourcemap: false,
+  },
+  define: {
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
+  },
 });

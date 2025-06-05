@@ -31,12 +31,12 @@ export const projectsData = {
       image: "/images/Superman_mainpage.png"
     },
     {
-      title: "Animasyonlu Saat",
-      description: "Animasyonlu bir saat uygulaması. Saat, dakika ve saniye göstergelerini kullanarak saat, dakika ve saniye göstergelerini görüntüler.",
-      technologies: ["JS", "CSS", "HTML"],
-      github: "https://codepen.io/ArslanKG/pen/xxvWPMQ",
-      external: "/projects/animatedClock",
-      image: "/images/Animated_Clock.png"
+      title: "Arkegu AI",
+      description: "Yapay zekaya gönderilen prompt'ları iyileştiren React tabanlı kullanıcı arayüzü. Çoklu model stratejileri, gerçek zamanlı chat ve MCP Server entegrasyonu içerir.",
+      technologies: ["React", "Zustand", "Axios", "MCP", "JavaScript"],
+      github: "https://github.com/ArslanKG/prompt-optimizer-frontend",
+      external: "https://arkeguai.vercel.app/",
+      image: "/images/arkegu-logo.png"
     },
     {
       title: "Her şey bir yansıma",
@@ -57,12 +57,12 @@ export const projectsData = {
       image: "/images/Superman_mainpage.png"
     },
     {
-      title: "Animated Clock",
-      description: "Animated clock application. The clock displays hours, minutes, and seconds using hour, minute, and second indicators.",
-      technologies: ["JS", "CSS", "HTML"],
-      github: "https://codepen.io/ArslanKG/pen/xxvWPMQ",
-      external: "/projects/animatedClock",
-      image: "/images/Animated_Clock.png"
+      title: "Arkegu AI",
+      description: "React-based user interface for optimizing AI prompts. Features multi-model strategies, real-time chat, and MCP Server integration.",
+      technologies: ["React", "Zustand", "Axios", "MCP", "JavaScript"],
+      github: "https://github.com/ArslanKG/prompt-optimizer-frontend",
+      external: "https://arkeguai.vercel.app/",
+      image: "/images/arkegu-logo.png"
     },
     {
       title: "Everything is a Reflection",
