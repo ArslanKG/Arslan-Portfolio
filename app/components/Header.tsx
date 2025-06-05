@@ -1,20 +1,35 @@
-import { FC } from "react";
+import { FC, useMemo } from "react";
 import { useLanguage } from '~/contexts/LanguageContext';
 import { headerData } from '~/data/headerData';
+import { NAVIGATION_ITEMS, Section } from '~/utils/constants';
+import { classNames } from '~/utils/helpers';
 
 interface HeaderProps {
   onAboutClick: () => void;
   onExperienceClick: () => void;
   onProjectsClick: () => void;
-  activeSection: string;
+  activeSection: Section;
 }
 
 const Header: FC<HeaderProps> = ({ onAboutClick, onExperienceClick, onProjectsClick, activeSection }) => {
   const { language, isTransitioning } = useLanguage();
   const t = headerData[language];
 
+  // Map section handlers for better maintainability
+  const sectionHandlers = useMemo(() => ({
+    about: onAboutClick,
+    experience: onExperienceClick,
+    projects: onProjectsClick
+  }), [onAboutClick, onExperienceClick, onProjectsClick]);
+
   return (
-    <header id="main-header" className={`fixed-header fade-transition ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
+    <header
+      id="main-header"
+      className={classNames(
+        'fixed-header fade-transition',
+        isTransitioning ? 'fade-out' : 'fade-in'
+      )}
+    >
       <div id="logo-container" className="logo">
         <h1 id="dev-name" className="text-balance">Arslan Kemal GÜNDÜZ</h1>
         <h2 id="dev-title" className="subtitle">{t.devTitle}</h2>
@@ -22,38 +37,25 @@ const Header: FC<HeaderProps> = ({ onAboutClick, onExperienceClick, onProjectsCl
           {t.devIntro}
         </p>
       </div>
-      <nav id="main-nav" className="nav-container">
+      
+      <nav id="main-nav" className="nav-container" role="navigation" aria-label="Main navigation">
         <ol>
-          <li>
-            <button 
-              id="nav-about" 
-              onClick={onAboutClick} 
-              className={`nav-button ${activeSection === "about" ? "active" : ""}`}
-              disabled={isTransitioning}
-            >
-              {t.about}
-            </button>
-          </li>
-          <li>
-            <button 
-              id="nav-experience" 
-              onClick={onExperienceClick} 
-              className={`nav-button ${activeSection === "experience" ? "active" : ""}`}
-              disabled={isTransitioning}
-            >
-              {t.experience}
-            </button>
-          </li>
-          <li>
-            <button 
-              id="nav-projects" 
-              onClick={onProjectsClick} 
-              className={`nav-button ${activeSection === "projects" ? "active" : ""}`}
-              disabled={isTransitioning}
-            >
-              {t.projects}
-            </button>
-          </li>
+          {NAVIGATION_ITEMS.map(({ id, section, labelKey }) => (
+            <li key={id}>
+              <button
+                id={id}
+                onClick={sectionHandlers[section]}
+                className={classNames(
+                  'nav-button',
+                  activeSection === section && 'active'
+                )}
+                disabled={isTransitioning}
+                aria-current={activeSection === section ? 'page' : undefined}
+              >
+                {t[labelKey]}
+              </button>
+            </li>
+          ))}
         </ol>
       </nav>
     </header>

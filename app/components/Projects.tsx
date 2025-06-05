@@ -1,49 +1,85 @@
 import { forwardRef } from "react";
 import { useLanguage } from '~/contexts/LanguageContext';
 import { projectsData, generalInfo } from "~/data/projectsData";
+import { GitHubIcon, ExternalLinkIcon } from '~/components/ui/Icons';
+import { generateElementId, getLanguageData } from '~/utils/helpers';
 
 const Projects = forwardRef<HTMLElement>((props, ref) => {
   const { language } = useLanguage();
+  const langData = getLanguageData(generalInfo, language);
 
   return (
     <section id="projects-section" ref={ref}>
       <h2 id="projects-heading" className="section-heading">
-        {generalInfo[language][0].projects}
+        {langData?.projects || 'Projects'}
       </h2>
       <div id="projects-content" className="projects-content">
         {projectsData[language].map((project, index) => (
-          <div id={`project-item-${index}`} key={index} className="project-item group">
-            <div className="project-header">
-              <h3 id={`project-title-${index}`} className="project-title">
+          <article
+            id={generateElementId('project-item', index)}
+            key={`project-${index}`}
+            className="project-item group"
+          >
+            <header className="project-header">
+              <h3 id={generateElementId('project-title', index)} className="project-title">
                 {project.title}
                 <span className="project-links">
                   {project.github && (
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`View ${project.title} on GitHub`}
+                    >
+                      <GitHubIcon />
                     </a>
                   )}
                   {project.external && (
-                    <a href={project.external} target="_blank" rel="noopener noreferrer" aria-label="External Link">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    <a
+                      href={project.external}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`View ${project.title} live demo`}
+                    >
+                      <ExternalLinkIcon />
                     </a>
                   )}
                 </span>
               </h3>
-            </div>
+            </header>
             <div className="project-content">
               <div className="project-image">
-                <img src={project.image} alt={project.title} />
+                <img
+                  src={project.image}
+                  alt={`Screenshot of ${project.title}`}
+                  loading="lazy"
+                />
               </div>
               <div className="project-info">
-                <p id={`project-description-${index}`} className="project-description">{project.description}</p>
-                <ul id={`project-tech-list-${index}`} className="project-tech-list">
+                <p
+                  id={generateElementId('project-description', index)}
+                  className="project-description"
+                >
+                  {project.description}
+                </p>
+                <ul
+                  id={generateElementId('project-tech-list', index)}
+                  className="project-tech-list"
+                  role="list"
+                  aria-label={`Technologies used in ${project.title}`}
+                >
                   {project.technologies.map((tech, techIndex) => (
-                    <li id={`project-tech-${index}-${techIndex}`} key={techIndex}>{tech}</li>
+                    <li
+                      id={generateElementId('project-tech', index, tech.toLowerCase())}
+                      key={`tech-${index}-${techIndex}`}
+                    >
+                      {tech}
+                    </li>
                   ))}
                 </ul>
               </div>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </section>

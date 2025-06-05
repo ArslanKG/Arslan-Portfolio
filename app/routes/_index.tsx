@@ -5,6 +5,7 @@ import Experience from '../components/Experience';
 import Projects from '../components/Projects';
 import Footer from '../components/Footer';
 import { useLanguage } from '../contexts/LanguageContext';
+import { Section, SECTIONS } from '../utils/constants';
 
 export default function Index() {
   const mainRef = useRef<HTMLElement>(null);
@@ -12,7 +13,7 @@ export default function Index() {
   const experienceRef = useRef<HTMLElement>(null);
   const projectsRef = useRef<HTMLElement>(null);
   const [isClient, setIsClient] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
+  const [activeSection, setActiveSection] = useState<Section>(SECTIONS.ABOUT);
   const { isTransitioning } = useLanguage();
 
   const scrollTo = (ref: React.RefObject<HTMLElement>) => {
@@ -31,11 +32,11 @@ export default function Index() {
       const sectionHeight = fullHeight / 8;
 
       if (scrollPosition < sectionHeight) {
-        setActiveSection("about");
+        setActiveSection(SECTIONS.ABOUT);
       } else if (scrollPosition < sectionHeight * 2.75) {
-        setActiveSection("experience");
+        setActiveSection(SECTIONS.EXPERIENCE);
       } else {
-        setActiveSection("projects");
+        setActiveSection(SECTIONS.PROJECTS);
       }
     };
 

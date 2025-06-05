@@ -15,9 +15,6 @@ const About = forwardRef<HTMLElement, {}>((props, ref) => {
           <p id="about-para-2">{t.aboutPara2}</p>
           <p id="about-para-3">{t.aboutPara3}</p>
         </div>
-        <div id="about-image" className="about-image">
-          {/* Profil resmi buraya */}
-        </div>
       </div>
     </section>
   );

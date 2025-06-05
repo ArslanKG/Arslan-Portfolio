@@ -1,6 +1,5 @@
-import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
-
-type Language = 'tr' | 'en';
+import { createContext, useState, useContext, ReactNode, FC } from 'react';
+import { Language, LANGUAGES, ANIMATION_DURATIONS } from '~/utils/constants';
 
 interface LanguageContextType {
   language: Language;
@@ -8,10 +7,14 @@ interface LanguageContextType {
   isTransitioning: boolean;
 }
 
+interface LanguageProviderProps {
+  children: ReactNode;
+}
+
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguageState] = useState<Language>('tr');
+export const LanguageProvider: FC<LanguageProviderProps> = ({ children }) => {
+  const [language, setLanguageState] = useState<Language>(LANGUAGES.TR);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const setLanguage = (lang: Language) => {
@@ -20,7 +23,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
       setTimeout(() => {
         setLanguageState(lang);
         setIsTransitioning(false);
-      }, 300); // Bu süre, CSS transition süresiyle eşleşmeli
+      }, ANIMATION_DURATIONS.LANGUAGE_TRANSITION);
     }
   };
 

@@ -1,31 +1,64 @@
 import { forwardRef } from "react";
 import { useLanguage } from '~/contexts/LanguageContext';
 import { experienceData, generalInfo } from "~/data/experienceData";
+import { generateElementId, getLanguageData } from '~/utils/helpers';
 
 const Experience = forwardRef<HTMLElement>((props, ref) => {
   const { language } = useLanguage();
+  const langData = getLanguageData(generalInfo, language);
 
   return (
     <section id="experience-section" ref={ref}>
       <h2 id="experience-heading" className="section-heading">
-        {generalInfo[language][0].experience}
+        {langData?.experience || 'Experience'}
       </h2>
       <div id="experience-content" className="experience-content">
         {experienceData[language].map((exp, index) => (
-          <div id={`experience-item-${index}`} key={index} className="experience-item group">
-            <div id={`experience-header-${index}`} className="experience-header">
-              <h3 id={`experience-title-${index}`} className="experience-title">
-                {exp.title} <span id={`experience-company-${index}`} className="company">@ {exp.company}</span>
+          <article
+            id={generateElementId('experience-item', index)}
+            key={`experience-${index}`}
+            className="experience-item group"
+          >
+            <header id={generateElementId('experience-header', index)} className="experience-header">
+              <h3 id={generateElementId('experience-title', index)} className="experience-title">
+                {exp.title}{' '}
+                <span
+                  id={generateElementId('experience-company', index)}
+                  className="company"
+                >
+                  @ {exp.company}
+                </span>
               </h3>
-              <div id={`experience-date-${index}`} className="experience-date">{exp.date}</div>
-            </div>
-            <p id={`experience-description-${index}`} className="experience-description">{exp.description}</p>
-            <ul id={`experience-technologies-${index}`} className="experience-technologies">
+              <time
+                id={generateElementId('experience-date', index)}
+                className="experience-date"
+                dateTime={exp.date.replace(' — ', '/')}
+              >
+                {exp.date}
+              </time>
+            </header>
+            <p
+              id={generateElementId('experience-description', index)}
+              className="experience-description"
+            >
+              {exp.description}
+            </p>
+            <ul
+              id={generateElementId('experience-technologies', index)}
+              className="experience-technologies"
+              role="list"
+              aria-label={`Technologies used at ${exp.company}`}
+            >
               {exp.technologies.map((tech, techIndex) => (
-                <li id={`experience-tech-${index}-${techIndex}`} key={techIndex}>{tech}</li>
+                <li
+                  id={generateElementId('experience-tech', index, tech.toLowerCase())}
+                  key={`tech-${index}-${techIndex}`}
+                >
+                  {tech}
+                </li>
               ))}
             </ul>
-          </div>
+          </article>
         ))}
       </div>
     </section>
