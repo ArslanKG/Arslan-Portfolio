@@ -1,24 +1,5 @@
 {
   "buildCommand": "remix build",
   "outputDirectory": "build",
-  "installCommand": "npm install",
-  "framework": null,
-  "functions": {
-    "app/entry.server.tsx": {
-      "includeFiles": "build/**"
-    }
-  },
-  "routes": [
-    {
-      "src": "/build/(.*)",
-      "headers": { "cache-control": "public, max-age=31536000, immutable" }
-    },
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/build/index.js"
-    }
-  ]
+  "installCommand": "npm install"
 }
