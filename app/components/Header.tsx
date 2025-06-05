@@ -26,37 +26,43 @@ const Header: FC<HeaderProps> = ({ onAboutClick, onExperienceClick, onProjectsCl
     <header
       id="main-header"
       className={classNames(
-        'fixed-header fade-transition',
+        'modern-header fade-transition',
         isTransitioning ? 'fade-out' : 'fade-in'
       )}
     >
-      <div id="logo-container" className="logo">
-        <h1 id="dev-name" className="text-balance">Arslan Kemal GÜNDÜZ</h1>
-        <h2 id="dev-title" className="subtitle">{t.devTitle}</h2>
-        <p id="dev-intro" className="intro-text mt-6 text-base text-slate-400">
+      <div id="logo-container" className="modern-logo">
+        <h1 id="dev-name" className="dev-name">Arslan Kemal GÜNDÜZ</h1>
+        <h2 id="dev-title" className="dev-role">Senior Software Developer</h2>
+        <div className="tech-stack">
+          <span className="tech-item">.NET</span>
+          <span className="tech-item">React</span>
+          <span className="tech-item">JavaScript</span>
+          <span className="tech-item">Cloud</span>
+        </div>
+        <p id="dev-intro" className="dev-intro">
           {t.devIntro}
         </p>
       </div>
       
-      <nav id="main-nav" className="nav-container" role="navigation" aria-label="Main navigation">
-        <ol>
-          {NAVIGATION_ITEMS.map(({ id, section, labelKey }) => (
-            <li key={id}>
-              <button
-                id={id}
-                onClick={sectionHandlers[section]}
-                className={classNames(
-                  'nav-button',
-                  activeSection === section && 'active'
-                )}
-                disabled={isTransitioning}
-                aria-current={activeSection === section ? 'page' : undefined}
-              >
-                {t[labelKey]}
-              </button>
-            </li>
+      <nav id="main-nav" className="modern-nav" role="navigation" aria-label="Main navigation">
+        <div className="nav-items">
+          {NAVIGATION_ITEMS.map(({ id, section, labelKey }, index) => (
+            <button
+              key={id}
+              id={id}
+              onClick={sectionHandlers[section]}
+              className={classNames(
+                'modern-nav-item',
+                activeSection === section && 'active'
+              )}
+              disabled={isTransitioning}
+              aria-current={activeSection === section ? 'page' : undefined}
+            >
+              <span className="nav-number">0{index + 1}</span>
+              <span className="nav-text">{t[labelKey]}</span>
+            </button>
           ))}
-        </ol>
+        </div>
       </nav>
     </header>
   );

@@ -1,34 +1,78 @@
 export const experienceData = {
   tr: [
     {
-      date: "Aralık 2021 — Şimdi",
-      title: "Kıdemli Yazılım Geliştirici",
-      company: "Logo Yazılım – Ürün Geliştirme (İşbaşı.com)",
-      description: ".NET ve modern web framework'leriyle SaaS bulut muhasebe modülleri (e-fatura, stok, cari hesaplar, raporlama) geliştirdim. RESTful API'ler, bankacılık API'leri, POS sistemleri ve gelişmiş mobil özellikler implement ettim. React ve Vue.js ile frontend geliştirme süreçlerini destekleyerek sorunsuz UI/UX sağladım.",
+      period: "Tem 2024 — Şimdi",
+      role: "Senior Software Developer",
+      company: "Logo Yazılım",
+      type: "Tam Zamanlı, Remote",
+      location: "İzmir, Türkiye",
+      description: ".NET ve modern web framework'leriyle SaaS bulut muhasebe modülleri geliştirdim. RESTful API'ler, bankacılık API'leri ve POS sistemleri implement ettim.",
+      technologies: ["C# (.NET)", "React", "RESTful API", "JavaScript", "Mongo", "Postgre"]
+    },
+    {
+      period: "Ara 2021 — Tem 2024",
+      role: "Software Development Specialist",
+      company: "Logo Yazılım",
+      type: "Tam Zamanlı, Hybrid",
+      location: "İzmir, Türkiye",
+      description: ".NET ve modern web framework'leriyle SaaS bulut muhasebe modülleri geliştirdim. RESTful API'ler, bankacılık API'leri ve POS sistemleri implement ettim.",
       technologies: ["C# (.NET)", "React", "Vue.js", "RESTful API", "SQL", "JavaScript"]
     },
     {
-      date: "Ağustos 2021 — Aralık 2021",
-      title: "Yazılım Geliştirici (Stajyer, sonra Yarı Zamanlı)",
+      period: "Eyl 2021 — Ara 2021",
+      role: "Software Development Specialist",
       company: "Logo Yazılım",
-      description: "Temel ürün geliştirme süreçlerine katkıda bulundum ve çevik, takım tabanlı iş akışlarında yer aldım. Agile (Scrum) metodolojilerini öğrenerek kod inceleme süreçlerine aktif olarak katıldım.",
+      type: "Yarı Zamanlı, Remote",
+      location: "Kocaeli, Türkiye",
+      description: "Temel ürün geliştirme süreçlerine katkıda bulundum. Agile metodolojilerini öğrenerek kod inceleme süreçlerine aktif olarak katıldım.",
       technologies: ["C# (.NET)", "JavaScript", "HTML5", "CSS3", "SQL"]
+    },
+    {
+      period: "Ağu 2021",
+      role: "Software Developer",
+      company: "Logo Yazılım",
+      type: "Stajyer, Remote",
+      location: "Kocaeli, Türkiye",
+      description: "Staj sürecinde .NET teknolojileri ve modern web geliştirme prensiplerini öğrendim. Takım içi iş birliği deneyimi kazandım.",
+      technologies: ["C# (.NET)", "JavaScript", "HTML5", "CSS3"]
     }
   ],
   en: [
     {
-      date: "Dec 2021 — Present",
-      title: "Senior Software Developer",
-      company: "Logo Yazılım – Product Development (İşbaşı.com)",
-      description: "Developed SaaS cloud accounting modules (e-invoice, stock, current accounts, reporting) with .NET and modern web frameworks. Implemented RESTful APIs, banking APIs, POS systems, and advanced mobile features. Supported frontend development with React and Vue.js, ensuring smooth UI/UX.",
+      period: "Jul 2024 — Present",
+      role: "Senior Software Developer",
+      company: "Logo Yazılım",
+      type: "Full-time",
+      location: "İzmir, Turkey",
+      description: "Leading role in developing SaaS cloud accounting modules and product architecture. Designing scalable solutions with microservices architecture.",
+      technologies: ["C# (.NET)", "React", "Vue.js", "Microservices", "Azure", "SQL"]
+    },
+    {
+      period: "Dec 2021 — Jul 2024",
+      role: "Software Development Specialist",
+      company: "Logo Yazılım",
+      type: "Full-time",
+      location: "İzmir, Turkey",
+      description: "Developed SaaS cloud accounting modules with .NET and modern web frameworks. Implemented RESTful APIs, banking APIs, and POS systems.",
       technologies: ["C# (.NET)", "React", "Vue.js", "RESTful API", "SQL", "JavaScript"]
     },
     {
-      date: "Aug 2021 — Dec 2021",
-      title: "Software Developer (Intern, then Part-time)",
+      period: "Sep 2021 — Dec 2021",
+      role: "Software Development Specialist",
       company: "Logo Yazılım",
-      description: "Contributed to core product development and agile, team-based workflows. Participated actively in Agile (Scrum) sprints and code reviews, gaining experience in collaborative software development.",
+      type: "Part-time",
+      location: "Kocaeli, Turkey",
+      description: "Contributed to core product development workflows. Participated actively in Agile sprints and code reviews.",
       technologies: ["C# (.NET)", "JavaScript", "HTML5", "CSS3", "SQL"]
+    },
+    {
+      period: "Aug 2021",
+      role: "Software Developer",
+      company: "Logo Yazılım",
+      type: "Internship",
+      location: "Kocaeli, Turkey",
+      description: "Learned .NET technologies and modern web development principles. Gained experience in team collaboration.",
+      technologies: ["C# (.NET)", "JavaScript", "HTML5", "CSS3"]
     }
   ]
 };
