@@ -1,34 +1,20 @@
-import { vitePlugin as remix } from "@remix-run/dev";
-import { installGlobals } from "@remix-run/node";
 import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 import tsconfigPaths from "vite-tsconfig-paths";
-
-installGlobals();
 
 export default defineConfig({
   plugins: [
-    remix({
-      ssr: false,
-      basename: "/",
-      buildEnd: async () => {
-        console.log("SPA build completed");
-      },
-      future: {
-        v3_fetcherPersist: true,
-        v3_relativeSplatPath: true,
-        v3_throwAbortReason: true,
-      },
-    }),
+    react(),
     tsconfigPaths(),
   ],
   build: {
+    outDir: 'build',
     minify: 'esbuild',
     sourcemap: false,
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom'],
-          remix: ['@remix-run/react', '@remix-run/node'],
+          vendor: ['react', 'react-dom', 'react-router-dom'],
         },
       },
     },
