@@ -15,7 +15,6 @@
     "analyze": "npx bundle-analyzer build/client"
   },
   "dependencies": {
-    "@remix-run/netlify": "^2.13.1",
     "@remix-run/node": "^2.13.1",
     "@remix-run/react": "^2.13.1",
     "@remix-run/serve": "^2.13.1",
