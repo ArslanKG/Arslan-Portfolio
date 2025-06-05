@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../app/styles/ReflectionProject.css"],
+  "sourcesContent": ["* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  overflow: hidden;\r\n  background: #000;\r\n}\r\n\r\n.reflection-canvas {\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100vw;\r\n  height: 100vh;\r\n  touch-action: none;\r\n  display: block;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .reflection-canvas {\r\n    touch-action: manipulation;\r\n  }\r\n}\r\n\r\n.home-button {\r\n  position: fixed;\r\n  top: 1rem;\r\n  right: 1rem;\r\n  padding: 0.5rem 1rem;\r\n  background: rgba(255, 255, 255, 0.1);\r\n  color: white;\r\n  text-decoration: none;\r\n  border-radius: 4px;\r\n  backdrop-filter: blur(5px);\r\n  z-index: 1000;\r\n  transition: background-color 0.3s ease;\r\n}\r\n\r\n.home-button:hover {\r\n  background: rgba(255, 255, 255, 0.2);\r\n}\r\n\r\n.lang-btn-container {\r\n  display: none !important;\r\n}"],
+  "mappings": ";AAAA;;;AAGE;;AAGF;AACE;AACA;;AAGF;AACE;AACA;AACA;AACA;AACA;AACA;AACA;;AAGF;AACE;AACE;;;AAIJ;AACE;AACA;AACA;AA9BF;AAgCE;AACA;AACA;AAlCF;AAoCE;AACA;AACA;;AAGF;AACE;;AAGF;AACE;;",
+  "names": []
+}
