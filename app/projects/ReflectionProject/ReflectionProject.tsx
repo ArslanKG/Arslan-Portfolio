@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react';
-import type { LinksFunction } from "@remix-run/node";
 import reflectionStyles from "../../styles/ReflectionProject.css?url";
-import { Link } from '@remix-run/react';
+import { Link } from 'react-router-dom';
+import { useLanguage } from "~/contexts/LanguageContext";
 
-export const links: LinksFunction = () => [
+export const links = () => [
   {
     rel: "stylesheet",
     href: reflectionStyles
@@ -198,9 +198,13 @@ export default function ReflectionProject() {
     };
   }, []);
 
+  const { language } = useLanguage();
+
   return (
     <>
-      <Link to="/" className="home-button" prefetch="intent">Ana Sayfa</Link>
+      <Link to="/" className="home-button">
+        {language === 'tr' ? 'Ana Sayfa' : 'Home'}
+      </Link>
       <canvas ref={canvasRef} className="reflection-canvas" />
     </>
   );

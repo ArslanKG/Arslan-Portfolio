@@ -1,9 +1,8 @@
 import { useLanguage } from '~/contexts/LanguageContext';
 import { useState, useEffect, useMemo } from 'react';
-import type { LinksFunction } from "@remix-run/node";
 import animatedClockStyles from "../../styles/AnimatedClock.css?url";
 
-export const links: LinksFunction = () => [
+export const links = () => [
   {
     rel: "stylesheet",
     href: animatedClockStyles
@@ -26,8 +25,10 @@ export default function AnimatedClockProject() {
     update();
     const id = setInterval(update, 1000);
     setIntervalId(id);
-    return () => id && clearInterval(id);
-  }, []); 
+    return () => {
+      if (id) clearInterval(id);
+    };
+  }, []);
 
   useEffect(() => {
     if (!now) return;

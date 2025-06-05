@@ -1,4 +1,4 @@
-import { useParams } from "@remix-run/react";
+import { useParams } from "react-router-dom";
 import AnimatedClockProject, { links as animatedClockLinks } from "../projects/animatedClock/animatedClock";
 import NotFound from "../components/NotFound";
 import ReflectionProject, { links as reflectionLinks } from "../projects/ReflectionProject/ReflectionProject";
