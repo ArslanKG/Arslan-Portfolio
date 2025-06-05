@@ -303,10 +303,10 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Arslan Kemal GÜNDÜZ**
 - 💼 Senior Software Developer
-- 🌐 Portfolio: [Live Demo](https://arslan-portfolio.vercel.app)
+- 🌐 Portfolio: [Live Demo](Soon)
 - 💻 GitHub: [@ArslanKG](https://github.com/ArslanKG)
 - 🎨 CodePen: [@ArslanKG](https://codepen.io/ArslanKG)
-- 💼 LinkedIn: [Arslan Kemal GÜNDÜZ](https://linkedin.com/in/arslankg)
+- 💼 LinkedIn: [Arslan Kemal GÜNDÜZ](https://www.linkedin.com/in/arslan-kemal-g%C3%BCnd%C3%BCz-8a2608194/)
 
 ---
 
