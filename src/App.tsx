@@ -4,7 +4,6 @@ import About from '../app/components/About';
 import Experience from '../app/components/Experience';
 import Projects from '../app/components/Projects';
 import Footer from '../app/components/Footer';
-import { LanguageProvider } from '../app/contexts/LanguageContext';
 import LanguageToggle from '../app/components/LanguageToggle';
 import ErrorBoundary from '../app/components/ErrorBoundary';
 import { useLanguage } from '../app/contexts/LanguageContext';
@@ -94,16 +93,14 @@ function PortfolioContent() {
 function App() {
   return (
     <div className="bg-navy leading-relaxed text-slate antialiased">
-      <LanguageProvider>
-        <ErrorBoundary>
-          <LanguageToggle />
-          <div 
-            id="gradient-background"
-            className="pointer-events-none fixed inset-0 z-[-1] transition duration-300"
-          />
-          <PortfolioContent />
-        </ErrorBoundary>
-      </LanguageProvider>
+      <ErrorBoundary>
+        <LanguageToggle />
+        <div
+          id="gradient-background"
+          className="pointer-events-none fixed inset-0 z-[-1] transition duration-300"
+        />
+        <PortfolioContent />
+      </ErrorBoundary>
     </div>
   );
 }

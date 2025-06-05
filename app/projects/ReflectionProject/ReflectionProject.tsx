@@ -1,14 +1,7 @@
 import { useEffect, useRef } from 'react';
-import reflectionStyles from "../../styles/ReflectionProject.css?url";
+import '../../styles/ReflectionProject.css';
 import { Link } from 'react-router-dom';
 import { useLanguage } from "~/contexts/LanguageContext";
-
-export const links = () => [
-  {
-    rel: "stylesheet",
-    href: reflectionStyles
-  },
-];
 
 export default function ReflectionProject() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -212,11 +205,11 @@ export default function ReflectionProject() {
   const { language } = useLanguage();
 
   return (
-    <>
+    <div className="reflection-project-container">
       <Link to="/" className="home-button">
         {language === 'tr' ? 'Ana Sayfa' : 'Home'}
       </Link>
       <canvas ref={canvasRef} className="reflection-canvas" />
-    </>
+    </div>
   );
 } 
